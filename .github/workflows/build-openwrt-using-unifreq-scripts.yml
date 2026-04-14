@@ -16,47 +16,8 @@ on:
         default: "all"
         type: choice
         options:
-          - all
-          - s922x_s905x3_s905x2_s912_s905d_s905
-          - rock5b_h28k_r66s_vplus
-          - 100ask-dshanpi-a1
-          - ak88
-          - beikeyun
-          - cm3
-          - e20c
-          - e24c
-          - e25
-          - e52c
-          - e54c
-          - ht2
-          - h28k
-          - h66k
-          - h68k
-          - h69k
-          - h69k-max
           - h88k
           - h88k-v3
-          - jp-tvbox
-          - l1pro
-          - photonicat
-          - qemu
-          - r66s
-          - r68s
-          - rock5b
-          - rock5c
-          - rk3399
-          - s905
-          - s905d
-          - s905x2
-          - s905x3
-          - s912
-          - s922x
-          - s922x-n2
-          - vplus
-          - watermelon-pi
-          - yixun-rs6pro
-          - zcube1-max
-          - diy
       customize_rk3399:
         description: "Set customize rk3399 devices"
         required: false
@@ -77,6 +38,7 @@ on:
         options:
           - breakingbadboy/OpenWrt
           - ophub/kernel
+          - cahtaysia/kernel
       openwrt_kernel:
         description: "Select kernel version"
         required: false
