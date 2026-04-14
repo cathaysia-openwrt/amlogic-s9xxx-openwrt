@@ -1002,6 +1002,16 @@ refactor_bootfs() {
         sed -i "s|^rootfstype=.*|rootfstype=btrfs|g" ${armbianenv_conf_file}
         sed -i "s|^rootflags=.*|rootflags=${armbianenv_rootflags}|g" ${armbianenv_conf_file}
         sed -i "s|^overlay_prefix=.*|overlay_prefix=${FAMILY}|g" ${armbianenv_conf_file}
+
+        if [[ "${FDTFILE}" == "rk3588-hlink-h88k.dtb" ]]; then
+            if grep -q '^overlays=' "${armbianenv_conf_file}"; then
+                if ! grep -q '^overlays=.*hinlink-h88k-240x135-lcd' "${armbianenv_conf_file}"; then
+                    sed -i 's|^overlays=\(.*\)$|overlays=\1 hinlink-h88k-240x135-lcd|g' ${armbianenv_conf_file}
+                fi
+            else
+                echo 'overlays=hinlink-h88k-240x135-lcd' >> ${armbianenv_conf_file}
+            fi
+        fi
     }
 
     # Check device configuration files
