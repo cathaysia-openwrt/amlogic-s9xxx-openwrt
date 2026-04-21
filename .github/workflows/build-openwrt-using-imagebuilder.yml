@@ -15,7 +15,7 @@ on:
       releases_branch:
         description: "Select the releases branch"
         required: false
-        default: "immortalwrt:24.10.5"
+        default: "openwrt:25.12.1"
         type: choice
         options:
           - openwrt:25.12.1
@@ -28,7 +28,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "all"
+        default: "h88k"
         type: choice
         options:
           - all
@@ -239,7 +239,7 @@ on:
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "6.12.y_6.18.y"
+        default: "6.1.y_6.12.y"
         type: choice
         options:
           - 5.10.y
@@ -261,10 +261,11 @@ on:
       kernel_repo:
         description: "Set the kernel repository"
         required: false
-        default: "ophub/kernel"
+        default: "cathaysia-openwrt/kernel"
         type: choice
         options:
           - ophub/kernel
+          - cathaysia-openwrt/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
         required: false
@@ -295,7 +296,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    if: ${{ github.event.repository.owner.id == github.event.sender.id }}
+    # if: ${{ github.event.repository.owner.id == github.event.sender.id }}
 
     steps:
       - name: Checkout
