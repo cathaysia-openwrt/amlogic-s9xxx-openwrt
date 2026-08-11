@@ -278,7 +278,7 @@ on:
       openwrt_ip:
         description: "Set OpenWrt default IP address."
         required: false
-        default: "172.17.0.1"
+        default: "172.20.0.1"
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
